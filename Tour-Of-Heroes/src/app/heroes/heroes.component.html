@@ -1,4 +1,6 @@
 <h2>My Heroes</h2>
+
+
 <ul class="heroes">
 
   <!-- The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list. -->
@@ -11,21 +13,5 @@
   </li>
 </ul>
 
-<!-- When selectedHero is undefined, the ngIf removes the hero detail from the DOM. There are no selectedHero bindings to worry about.
-When the user picks a hero, selectedHero has a value and ngIf puts the hero detail into the DOM. -->
-<div *ngIf="selectedHero">
-  
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
 
-
-<!-- [(ngModel)] is Angular's two-way data binding syntax.
-Although ngModel is a valid Angular directive, it isn't available by default.
-It belongs to the optional FormsModule and you must opt-in to using it. -->
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </label>
-  </div>
-
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
