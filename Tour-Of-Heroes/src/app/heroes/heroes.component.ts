@@ -10,8 +10,6 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
 
-  selectedHero: Hero;
-
   heroes: Hero[];
   
   /* The parameter simultaneously defines a private heroService property and identifies it as a HeroService injection site. */
@@ -21,10 +19,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
   
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-  
+
   /* The new version waits for the Observable to emit the array of heroes— which could happen now or several minutes from now. 
   Then subscribe passes the emitted array to the callback, which sets the component's heroes property. */
   getHeroes(): void {
